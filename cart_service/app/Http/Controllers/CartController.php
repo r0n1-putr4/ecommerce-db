@@ -54,11 +54,7 @@ class CartController extends Controller
                 'file' => $th->getFile(),
                 'line' => $th->getLine()
             ]);
-            return response()->json(
-                [
-                    'message' => $th->getMessage(),
-                ]
-            );
+            return ResponseHelper::errorResponse($th->getMessage());
         }
     }
 
